@@ -26,7 +26,6 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseUser user;
 
     private EditText emailET, passwordET;
-    private Button loginBtn, createAccBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         passwordET = findViewById(R.id.password_ET);
 
         //Handle login button
-        loginBtn = findViewById(R.id.login_btn);
+        Button loginBtn = findViewById(R.id.login_btn);
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,8 +49,11 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
+        //commit test
+
         //Handle create account button
-        createAccBtn = findViewById(R.id.create_account_btn);
+        Button createAccBtn = findViewById(R.id.create_account_btn);
         createAccBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

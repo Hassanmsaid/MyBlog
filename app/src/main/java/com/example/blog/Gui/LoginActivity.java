@@ -107,6 +107,8 @@ public class LoginActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    //commit 2
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

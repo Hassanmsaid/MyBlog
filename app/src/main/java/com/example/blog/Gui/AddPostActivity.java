@@ -7,13 +7,17 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.blog.Gui.Posts.PostsActivity;
 import com.example.blog.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -44,6 +48,7 @@ public class AddPostActivity extends AppCompatActivity {
     private Uri imageUri;
     private ProgressDialog progressDialog;
     private String downloadImageUrl;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +62,8 @@ public class AddPostActivity extends AppCompatActivity {
         storageReference = FirebaseStorage.getInstance().getReference();
 
         progressDialog = new ProgressDialog(this);
+//        toolbar = findViewById(R.id.add_post_toolbar);
+//        setSupportActionBar(toolbar);
 
         postImage = findViewById(R.id.add_post_img);
         postImage.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +94,32 @@ public class AddPostActivity extends AppCompatActivity {
             imageUri = data.getData();
             postImage.setImageURI(imageUri);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_add:
+                if (auth != null && user != null) {
+                    startActivity(new Intent(AddPostActivity.this, AddPostActivity.class));
+//                    finish();
+                }
+                break;
+            case R.id.action_signout:
+                if (auth != null && user != null) {
+                    auth.signOut();
+                    startActivity(new Intent(AddPostActivity.this, LoginActivity.class));
+                    finish();
+                }
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void startPosting() {

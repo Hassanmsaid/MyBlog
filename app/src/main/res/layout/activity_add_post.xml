@@ -4,58 +4,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="12dp"
-    android:weightSum="6"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Gui.AddPostActivity">
 
-    <LinearLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/add_post_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/add_post_img"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:cropToPadding="false"
-            android:scaleType="centerCrop"
-            android:src="@drawable/add_image" />
-    </LinearLayout>
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="Add Post"
+        app:layout_scrollFlags="scroll|enterAlways|snap"
+        app:titleTextColor="@color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:weightSum="6">
 
-        <EditText
-            android:id="@+id/add_post_title_ET"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/edit_text_style"
-            android:imeOptions="actionNext"
-            android:hint="Post Title..." />
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/add_post_text_ET"
+            <ImageView
+                android:id="@+id/add_post_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:cropToPadding="false"
+                android:scaleType="centerCrop"
+                android:src="@drawable/add_image" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/edit_text_style"
-            android:hint="Post Text..." />
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/post_btn"
-            style="@style/ButtonStyle"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="16dp"
-            android:text="Post" />
+            <EditText
+                android:id="@+id/add_post_title_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_style"
+                android:imeOptions="actionNext"
+                android:hint="Post Title..." />
+
+            <EditText
+                android:id="@+id/add_post_text_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Post Text..." />
+
+            <Button
+                android:id="@+id/post_btn"
+                style="@style/ButtonStyle"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="16dp"
+                android:text="Post" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
+
 
 </LinearLayout>

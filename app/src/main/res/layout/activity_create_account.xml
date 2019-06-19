@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:padding="12dp"
     android:weightSum="8"
-    tools:context=".Gui.CreateAccountActivity">
+    tools:context=".Gui.CreateAccount.CreateAccountActivity">
 
 
     <ImageView
@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_text_style"
+        android:inputType="textCapWords"
         android:hint="First Name" />
 
     <EditText
@@ -30,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_text_style"
+        android:inputType="textCapWords"
         android:hint="Last Name" />
 
     <EditText
@@ -38,6 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_text_style"
+        android:inputType="textEmailAddress"
         android:hint="Email" />
 
     <EditText

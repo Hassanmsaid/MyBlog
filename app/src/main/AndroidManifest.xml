@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Gui.ProfileActivity"></activity>
-        <activity android:name=".Gui.CreateAccountActivity" />
+        <activity android:name=".Gui.CreateAccount.CreateAccountActivity" />
         <activity android:name=".Gui.AddPostActivity" />
         <activity android:name=".Gui.Posts.PostsActivity" />
         <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
@@ -26,6 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
     </application>
 
 </manifest>

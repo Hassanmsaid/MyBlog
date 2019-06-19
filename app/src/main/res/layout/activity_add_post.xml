@@ -52,6 +52,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@drawable/edit_text_style"
                 android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
                 android:hint="Post Title..." />
 
             <EditText
@@ -60,6 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/edit_text_style"
+                android:inputType="textCapSentences"
                 android:hint="Post Text..." />
 
             <Button
